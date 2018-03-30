@@ -18,7 +18,6 @@ namespace Library.DAL
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<Reader> Reader { get; set; }
         public virtual DbSet<OrderBooks> OrderBooks {get;set;}
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();          
