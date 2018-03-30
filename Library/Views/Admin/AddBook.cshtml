@@ -1,0 +1,50 @@
+﻿@model Library.Models.Book
+
+@{
+    Layout = null;
+    }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj książkę.</title>
+    <link rel="stylesheet" href="~/Content/StyleSheet1.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Biblioteka</h1>
+        </div>
+        <div class="navigator">
+            @Html.Partial("_navAdmin")
+        </div>
+
+        @using (Html.BeginForm())
+    {
+        <div class="addForm">
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Title, "Tytuł: ")</td>
+                    <td>@Html.TextBox("Title")</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Author, "Autor: ")</td>
+                    <td>@Html.TextBox("Author")</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.YearPublication, "Data publikacji: ")</td>
+                    <td>@Html.TextBox("YearPublication")</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.CategoryId, "Kategoria: ")</td>
+                    <td>@Html.DropDownList("CategoryId")</td>
+                </tr>
+            </table>
+            <input type="submit" value="Dodaj" />
+        </div>
+}
+    </div>
+</body>
+
+</html>
+

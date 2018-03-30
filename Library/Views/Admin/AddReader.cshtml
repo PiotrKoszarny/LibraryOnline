@@ -1,0 +1,35 @@
+﻿@model Library.Models.Reader
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj czytelnika</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div class="AddReader">
+            <div>
+                @Html.Label("Imię")
+                @Html.TextBox("FirstName")
+            </div>
+            <div>
+                @Html.Label("Nazwisko")
+                @Html.TextBox("LastName")
+            </div>
+            <div>
+                @Html.Label("Adres")
+                @Html.TextBox("Address")
+            </div>
+            <div>
+                @Html.Label("E-mail")
+                @Html.TextBox("Email")
+            </div>
+            <input type="submit" value="Dodaj czytelnika" />
+        </div>
+    }
+</body>
+</html>

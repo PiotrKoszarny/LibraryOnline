@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Library.Models.Book>
+@using (Html.BeginForm())
+{
+    <div>
+        <table>
+            <tr>
+                <td>
+                    Podaj tytuł:
+                </td>
+                <td>
+                    @Html.TextBox("TitleSearch")
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Szukaj" />
+    </div>
+    <div>
+        @foreach (var item in Model)
+    {
+        <div class="addFrom">
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(m => item.Title, "TytuŁ")</td>
+                    <td>@Html.DisplayFor(m => item.Title)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => item.Author, "Autor")</td>
+                    <td>@Html.DisplayFor(m => item.Author)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => item.Category, "Kategoria")</td>
+                    <td>@Html.DisplayFor(m => item.CategoryId)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => item.YearPublication, "Rok publikacji")</td>
+                    <td>@Html.DisplayFor(m => item.YearPublication)</td>
+                </tr>
+            </table>
+        </div>
+}
+    </div>
+}

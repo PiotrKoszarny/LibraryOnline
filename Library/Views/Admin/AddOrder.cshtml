@@ -1,0 +1,29 @@
+﻿@model Library.Models.Order
+    @{ 
+        Layout = null;
+    }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj czytelnika</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+    <div class="AddOrder">
+        <div>
+            @Html.Label("Data zamówienia: ")
+            @Html.TextBox("OrderDate")
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Reader, "Czytelnik")
+            @Html.DropDownList("ReaderId")
+        </div>
+        @Html.ListBox("BookId")
+
+    </div>
+        
+        <input type="submit" value="Dodaj zamówienie"/>
+    }
+</body>
+</html>
